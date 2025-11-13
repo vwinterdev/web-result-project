@@ -38,10 +38,9 @@ function ArticleEditorPage() {
   }, [fetchedArticle])
 
   const handleChange = (nextText?: string) => {
-    if (!nextText) return
     if (!draftArticle) return
     setIsLoadingSave(true)
-    setDraftArticle({ ...draftArticle, text: nextText })
+    setDraftArticle({ ...draftArticle, text: nextText || '' })
     handleSave()
   }
 
